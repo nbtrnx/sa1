@@ -22,6 +22,22 @@ h1 {
   letter-spacing: -1px;
 }
 
+.page-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.works-link {
+  color: #ff7a7a;
+  font-size: 18px;
+  font-weight: 700;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 5px;
+  white-space: nowrap;
+}
+
 .content-area {
   display: flex;
   flex-direction: column;
@@ -146,6 +162,11 @@ time {
   h1 {
     font-size: 64px;
     padding-top: 10px;
+    flex-shrink: 0;
+  }
+
+  .page-heading {
+    flex-direction: column;
     flex-shrink: 0;
   }
 
