@@ -1,222 +1,179 @@
-body {
-  font-family: sans-serif;
-  background-color: #ffffff;
+/* Home — Figma node 169:168 (1512px design, content width 1160) */
+
+:root {
+  --accent: #ff7a7a;
+  --soft: #ffc4c4;
+  --surface: #fff3f3;
+  --placeholder: #d9d9d9;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+  color: var(--accent);
+  font-synthesis: none;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { min-width: 320px; margin: 0; background: #fff; }
+a { color: inherit; }
+
+.container {
+  width: min(1160px, 100% - clamp(40px, 8vw, 120px));
+  margin-inline: auto;
+}
+
+/* Hero fills the first screen; the fixed header overlays its top, as in Figma */
+.hero {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  height: 100svh;
+  min-height: 480px;
+  color: #000;
+  background: var(--placeholder);
+}
+
+.hero h1 {
   margin: 0;
-  padding: 40px 20px;
-  display: flex;
-  justify-content: center;
-}
-
-.main-wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  width: 100%;
-  max-width: 1100px;
-}
-
-h1 {
-  font-size: 56px;
-  font-weight: 500;
-  margin: 0 0 10px 0;
-  letter-spacing: -1px;
-}
-
-.page-heading {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 24px;
-}
-
-.works-link {
-  color: #ff7a7a;
-  font-size: 18px;
+  font-size: clamp(48px, 6.35vw, 96px);
   font-weight: 700;
-  text-decoration-thickness: 2px;
-  text-underline-offset: 5px;
-  white-space: nowrap;
+  line-height: 1.2;
+  letter-spacing: .05em;
 }
 
-.content-area {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-  flex-grow: 1;
-}
-
-.timeline-container {
-  background: #ffffff;
-  border: 3.5px solid #000000;
-  border-radius: 32px;
-  padding: 30px 20px;
-  width: 100%;
-  box-sizing: border-box;
-  position: relative;
-}
-
-.vertical-line {
-  position: absolute;
-  top: 52px;
-  bottom: 120px;
-  left: 42px;
-  width: 2.5px;
-  background-color: #000000;
-  z-index: 1;
-}
-
-.comment-item {
-  position: relative;
-  z-index: 2;
-  margin-bottom: 30px;
-}
-
-.comment-item:last-child {
-  margin-bottom: 0;
-}
-
-.comment-item.reply {
-  margin-left: 45px;
-}
-
-.comment-item.reply::before {
-  content: '';
-  position: absolute;
-  top: 22px;
-  left: -24px;
-  width: 20px;
-  height: 2.5px;
-  background-color: #000000;
-}
-
-.user-info {
+/* Section headings: big pink title + triangle */
+.section-heading {
   display: flex;
   align-items: center;
-  gap: 12px;
-  margin-bottom: 6px;
+  gap: clamp(40px, 9.9vw, 150px);
 }
 
-.avatar {
-  width: 40px;
-  height: 40px;
-  border: 2.5px solid #000000;
-  border-radius: 50%;
-  background-color: #fff;
-  object-fit: cover;
-}
-
-.username {
-  font-weight: bold;
-  font-size: 16px;
-}
-
-.comment-content-body {
-  margin-left: 52px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.text-and-time {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.comment-text {
-  font-size: 16px;
-  line-height: 1.4;
+.section-heading h2 {
   margin: 0;
-  color: #000000;
-  font-weight: 500;
+  font-size: clamp(44px, 6.35vw, 96px);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: .05em;
 }
 
-time {
-  font-size: 12px;
-  color: #999999;
+.arrow {
+  flex: none;
+  width: clamp(28px, 3.62vw, 55px);
+  aspect-ratio: 55 / 50;
+  background: var(--soft);
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
 }
 
-.actions {
+.works-section { padding-top: clamp(72px, 9.46vw, 143px); }
+.members-section, .blog-section { padding-top: clamp(110px, 17vw, 260px); }
+
+/* Card rows: 3 cards of 399x528 with ~70px gaps at full size */
+.card-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(20px, 4.63vw, 70px);
+  margin-top: clamp(36px, 5.3vw, 80px);
+}
+
+.card {
+  display: block;
+  aspect-ratio: 399 / 528;
+  background: var(--surface);
+  border-radius: clamp(20px, 2.65vw, 40px);
+}
+
+a.card {
+  text-decoration: none;
+  transition: transform .16s ease, background-color .16s ease;
+}
+a.card:hover { background: #ffeaea; transform: translateY(-6px); }
+a.card:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+
+/* First works card: thumbnail + title + pill (Figma 225x300 thumb in a 399x528 card) */
+.card--work {
+  container-type: inline-size;
   display: flex;
-  gap: 16px;
-  justify-content: flex-end;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 12.5%;
+  overflow: hidden;
 }
 
-.action-icon {
-  width: 22px;
-  height: 22px;
-  cursor: pointer;
+.thumb {
+  width: 56.4%;
+  aspect-ratio: 225 / 300;
+  background: var(--placeholder);
 }
 
-@media (min-width: 768px) {
-  body {
-    padding: 80px 40px;
+.work-title {
+  margin: 4.3% 0 0;
+  font-size: 10cqw;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: .05em;
+}
+
+.pill {
+  flex: none;
+  width: 61.4%;
+  aspect-ratio: 245 / 55;
+  margin-top: 4%;
+  background: var(--soft);
+  border-radius: 999px;
+  transition: background-color .16s ease, transform .16s ease;
+}
+
+.pill:hover { background: var(--accent); transform: translateY(-2px); }
+.pill:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+
+/* Dot indicators (inline SVG, scales with viewport) */
+.dots {
+  display: block;
+  height: auto;
+  margin-inline: auto;
+}
+
+.dots--works {
+  width: clamp(72px, 8.47vw, 128px);
+  margin-top: clamp(56px, 7.94vw, 120px);
+}
+
+.dots--wide {
+  width: min(820px, 82%);
+  margin-top: clamp(44px, 5.69vw, 86px);
+}
+
+.site-footer {
+  height: clamp(240px, 46.2vw, 700px);
+  margin-top: clamp(110px, 19.8vw, 300px);
+  background: var(--soft);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Small screens: card rows become swipeable carousels (the dots hint at this) */
+@media (max-width: 700px) {
+  .hero { min-height: 420px; }
+
+  .card-row {
+    grid-template-columns: repeat(3, min(72%, 300px));
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 10px;
+    -webkit-overflow-scrolling: touch;
   }
 
-  .main-wrapper {
-    flex-direction: row;
-    gap: 60px;
-    align-items: flex-start;
-  }
+  .card { scroll-snap-align: center; }
 
-  h1 {
-    font-size: 64px;
-    padding-top: 10px;
-    flex-shrink: 0;
-  }
-
-  .page-heading {
-    flex-direction: column;
-    flex-shrink: 0;
-  }
-
-  .content-area {
-    gap: 40px;
-  }
-
-  .timeline-container {
-    padding: 40px;
-  }
-
-  .vertical-line {
-    top: 62px;
-    bottom: 125px;
-    left: 62px;
-  }
-
-  .comment-item.reply {
-    margin-left: 60px;
-  }
-
-  .comment-item.reply::before {
-    left: -34px;
-    width: 32px;
-  }
-
-  .user-info {
-    gap: 16px;
-    margin-bottom: 4px;
-  }
-
-  .avatar {
-    width: 44px;
-    height: 44px;
-  }
-
-  .comment-content-body {
-    margin-left: 60px;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 20px;
-  }
-
-  .comment-text {
-    font-size: 18px;
-  }
-
-  .actions {
-    align-self: flex-end;
-    margin-top: 10px;
-  }
+  .members-section, .blog-section { padding-top: 90px; }
+  .dots--works { margin-top: 44px; }
+  .dots--wide { margin-top: 36px; }
+  .site-footer { margin-top: 100px; }
 }
