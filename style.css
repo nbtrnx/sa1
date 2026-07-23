@@ -245,6 +245,8 @@ a.card:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
   gap: 8px;
 }
 
+.member-modal__info div[hidden] { display: none; }
+
 .member-modal__info dt { color: var(--accent); font-weight: 700; }
 .member-modal__info dt::after { content: ":"; }
 .member-modal__info dd { margin: 0; }

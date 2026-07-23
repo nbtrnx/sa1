@@ -51,6 +51,9 @@ if (modal) {
       photoEl.alt = '';
     }
     nameEl.textContent = name;
+    // data attribute absent -> placeholder; set but empty (data-team="") -> row hidden
+    teamEl.parentElement.hidden = card.dataset.team === '';
+    roleEl.parentElement.hidden = card.dataset.role === '';
     teamEl.textContent = card.dataset.team || 'XXXXXXXXXX';
     roleEl.textContent = card.dataset.role || 'XXXXXXXXXXXXXXXXXXXX';
     lastFocused = card;
