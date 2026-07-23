@@ -30,7 +30,7 @@ a { color: inherit; }
   height: 100svh;
   min-height: 480px;
   color: #000;
-  background: var(--placeholder);
+  background: #fff;
 }
 
 .hero h1 {
@@ -39,6 +39,14 @@ a { color: inherit; }
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: .05em;
+}
+
+.hero-logo {
+  display: block;
+  width: min(70%, 700px);
+  max-height: 62vh;
+  height: auto;
+  object-fit: contain;
 }
 
 /* Section headings: big pink title + triangle */
@@ -297,6 +305,7 @@ body.modal-open { overflow: hidden; }
 /* Small screens: card rows become swipeable carousels (the dots hint at this) */
 @media (max-width: 700px) {
   .hero { min-height: 420px; }
+  .hero-logo { width: min(82%, 520px); }
 
   .container { width: calc(100% - 100px); }
 
