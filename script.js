@@ -78,3 +78,37 @@ if (modal) {
     if (e.key === 'Escape' && !modal.hidden) closeModal();
   });
 }
+
+// Work modals (works page): static modals opened via data-open-modal buttons.
+// Pages show one at a time; arrows or ArrowLeft/ArrowRight flip pages.
+document.querySelectorAll('.work-modal').forEach((m) => {
+  const close = () => { m.hidden = true; document.body.classList.remove('modal-open'); };
+  m.querySelectorAll('[data-modal-close]').forEach((el) => el.addEventListener('click', close));
+
+  const pages = [...m.querySelectorAll('.work-modal__stage img')];
+  const counter = m.querySelector('.work-modal__counter');
+  let current = 0;
+  const show = (i) => {
+    current = (i + pages.length) % pages.length;
+    pages.forEach((p, k) => p.classList.toggle('is-current', k === current));
+    if (counter) counter.textContent = `${current + 1} / ${pages.length}`;
+  };
+  m.querySelector('.work-modal__nav--prev')?.addEventListener('click', () => show(current - 1));
+  m.querySelector('.work-modal__nav--next')?.addEventListener('click', () => show(current + 1));
+
+  document.addEventListener('keydown', (e) => {
+    if (m.hidden) return;
+    if (e.key === 'Escape') close();
+    if (e.key === 'ArrowLeft') show(current - 1);
+    if (e.key === 'ArrowRight') show(current + 1);
+  });
+});
+document.querySelectorAll('[data-open-modal]').forEach((btn) => {
+  const m = document.getElementById(btn.dataset.openModal);
+  if (!m) return;
+  btn.addEventListener('click', () => {
+    m.hidden = false;
+    document.body.classList.add('modal-open');
+    m.querySelector('.work-modal__close')?.focus();
+  });
+});
