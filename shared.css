@@ -1,7 +1,7 @@
 /* Shared header bar — Figma node 246:2 (ENG SA G1 / WORK / BLOG) */
 
 :root {
-  --header-h: clamp(64px, 6.61vw, 100px);
+  --header-h: clamp(76px, 7.8vw, 118px);
 }
 
 .site-header {
@@ -26,10 +26,18 @@
 }
 
 .brand {
+  display: flex;
+  align-items: center;
+  gap: clamp(8px, 0.8vw, 12px);
   font-size: clamp(20px, 2.12vw, 32px);
   line-height: 1;
   letter-spacing: .02em;
   white-space: nowrap;
+}
+
+.brand-logo {
+  width: clamp(40px, 3.9vw, 60px);
+  height: auto;
 }
 
 .site-nav {
@@ -73,4 +81,27 @@
 
 @media (max-width: 520px) {
   .site-nav { gap: 22px; }
+}
+
+/* Shared slim pink footer */
+.site-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(12px, 1.3vw, 20px);
+  padding: clamp(18px, 2vw, 30px) 16px;
+  background: #ffc4c4;
+}
+
+.footer-logo {
+  width: clamp(36px, 3.5vw, 54px);
+  height: auto;
+}
+
+.site-footer small {
+  color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+  font-size: clamp(11px, 0.93vw, 14px);
+  font-weight: 700;
+  letter-spacing: .08em;
 }
