@@ -20,17 +20,11 @@ html {
 body {
   min-width: 320px;
   margin: 0;
-<<<<<<< HEAD
   background: #fff;
 }
 
 a {
   color: inherit;
-=======
-  padding: 110px 50px 40px;
-  display: flex;
-  justify-content: center;
->>>>>>> 4000750c3edb58ce2e75307024648e1e192a5028
 }
 
 .main-wrapper {
@@ -165,15 +159,7 @@ time {
   cursor: pointer;
 }
 
-<<<<<<< HEAD
 @media (max-width: 1100px) {
-=======
-@media (min-width: 768px) {
-  body {
-    padding: 130px 100px 80px;
-  }
-
->>>>>>> 4000750c3edb58ce2e75307024648e1e192a5028
   .main-wrapper {
     padding-inline: 32px;
     gap: 48px;
