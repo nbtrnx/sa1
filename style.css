@@ -15,9 +15,10 @@ html { scroll-behavior: smooth; }
 body { min-width: 320px; margin: 0; background: #fff; }
 a { color: inherit; }
 
-/* Side padding per Design Rules page: 100px desktop / 50px mobile */
+/* Side padding per Design Rules page: 100px desktop / 50px mobile.
+   Content scaled to 75% of the Figma frame sizes. */
 .container {
-  width: min(1160px, 100% - 200px);
+  width: min(870px, 100% - 200px);
   margin-inline: auto;
 }
 
@@ -34,7 +35,7 @@ a { color: inherit; }
 
 .hero h1 {
   margin: 0;
-  font-size: clamp(48px, 6.35vw, 96px);
+  font-size: clamp(40px, 4.76vw, 72px);
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: .05em;
@@ -44,12 +45,12 @@ a { color: inherit; }
 .section-heading {
   display: flex;
   align-items: center;
-  gap: clamp(40px, 9.9vw, 150px);
+  gap: clamp(30px, 7.43vw, 112px);
 }
 
 .section-heading h2 {
   margin: 0;
-  font-size: clamp(44px, 6.35vw, 96px);
+  font-size: clamp(36px, 4.76vw, 72px);
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: .05em;
@@ -57,28 +58,28 @@ a { color: inherit; }
 
 .arrow {
   flex: none;
-  width: clamp(28px, 3.62vw, 55px);
+  width: clamp(22px, 2.72vw, 41px);
   aspect-ratio: 55 / 50;
   background: var(--soft);
   clip-path: polygon(0 0, 100% 50%, 0 100%);
 }
 
-.works-section { padding-top: clamp(72px, 9.46vw, 143px); }
-.members-section, .blog-section { padding-top: clamp(110px, 17vw, 260px); }
+.works-section { padding-top: clamp(56px, 7.1vw, 107px); }
+.members-section, .blog-section { padding-top: clamp(84px, 12.75vw, 195px); }
 
 /* Card rows: 3 cards of 399x528 with ~70px gaps at full size */
 .card-row {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: clamp(20px, 4.63vw, 70px);
-  margin-top: clamp(36px, 5.3vw, 80px);
+  gap: clamp(16px, 3.47vw, 53px);
+  margin-top: clamp(28px, 3.97vw, 60px);
 }
 
 .card {
   display: block;
   aspect-ratio: 399 / 528;
   background: var(--surface);
-  border-radius: clamp(20px, 2.65vw, 40px);
+  border-radius: clamp(16px, 1.99vw, 30px);
 }
 
 a.card {
@@ -133,18 +134,18 @@ a.card:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
 }
 
 .dots--works {
-  width: clamp(72px, 8.47vw, 128px);
-  margin-top: clamp(56px, 7.94vw, 120px);
+  width: clamp(56px, 6.35vw, 96px);
+  margin-top: clamp(44px, 5.95vw, 90px);
 }
 
 .dots--wide {
-  width: min(820px, 82%);
-  margin-top: clamp(44px, 5.69vw, 86px);
+  width: min(615px, 82%);
+  margin-top: clamp(33px, 4.27vw, 65px);
 }
 
 .site-footer {
-  height: clamp(240px, 46.2vw, 700px);
-  margin-top: clamp(110px, 19.8vw, 300px);
+  height: clamp(180px, 34.65vw, 525px);
+  margin-top: clamp(84px, 14.85vw, 225px);
   background: var(--soft);
 }
 
@@ -166,7 +167,7 @@ a.card:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
   .container { width: calc(100% - 100px); }
 
   .card-row {
-    grid-template-columns: repeat(3, min(72%, 300px));
+    grid-template-columns: repeat(3, min(72%, 240px));
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     padding-bottom: 10px;

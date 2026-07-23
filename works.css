@@ -1,4 +1,4 @@
-/* Works — Figma node 1:13 (1512px design, cards 1162x750, content width 1160)
+/* Works — Figma node 1:13, content scaled to 75% (cards 872x563, content width 870)
    Side padding per Design Rules page: 100px desktop / 50px mobile */
 
 :root {
@@ -17,16 +17,16 @@ body { min-width: 320px; margin: 0; background: #fff; }
 a { color: inherit; }
 
 .page {
-  width: min(100%, 1360px);
+  width: min(100%, 1070px);
   margin: auto;
-  padding: 130px 100px 240px;
+  padding: 110px 100px 180px;
 }
 
 header { position: relative; text-align: center; }
 
 h1 {
   margin: 0;
-  font-size: clamp(48px, 6.35vw, 96px);
+  font-size: clamp(36px, 4.76vw, 72px);
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: .05em;
@@ -35,10 +35,10 @@ h1 {
 .filters {
   display: flex;
   justify-content: center;
-  gap: clamp(24px, 4.37vw, 66px);
-  margin-top: clamp(48px, 7.28vw, 110px);
+  gap: clamp(18px, 3.28vw, 50px);
+  margin-top: clamp(36px, 5.46vw, 83px);
   color: var(--soft);
-  font-size: clamp(14px, 1.59vw, 24px);
+  font-size: clamp(12px, 1.19vw, 18px);
   letter-spacing: .1em;
 }
 
@@ -46,23 +46,23 @@ h1 {
 
 .works {
   display: grid;
-  gap: clamp(64px, 10.58vw, 160px);
-  width: min(100%, 1160px);
-  margin: clamp(72px, 10.19vw, 154px) auto 0;
+  gap: clamp(48px, 7.94vw, 120px);
+  width: min(100%, 870px);
+  margin: clamp(54px, 7.64vw, 116px) auto 0;
 }
 
-/* Card: 1162x750, thumb 400x533 at (155,108), text column starting at x=664 */
+/* Card: 75% of Figma 1162x750 — thumb 300x400, text column offset preserved */
 .card {
   position: relative;
   display: grid;
-  grid-template-columns: minmax(260px, 400px) 1fr;
-  gap: clamp(48px, 7.21vw, 109px);
-  padding: clamp(48px, 7.14vw, 108px)
-           clamp(28px, 4.37vw, 66px)
-           clamp(48px, 7.21vw, 109px)
-           clamp(56px, 10.25vw, 155px);
+  grid-template-columns: minmax(200px, 300px) 1fr;
+  gap: clamp(36px, 5.41vw, 82px);
+  padding: clamp(36px, 5.36vw, 81px)
+           clamp(21px, 3.28vw, 50px)
+           clamp(36px, 5.41vw, 82px)
+           clamp(42px, 7.69vw, 116px);
   background: var(--surface);
-  border-radius: clamp(24px, 2.65vw, 40px);
+  border-radius: clamp(18px, 1.99vw, 30px);
 }
 
 .thumb {
@@ -75,7 +75,7 @@ h1 {
 
 .content h2 {
   margin: 0;
-  font-size: clamp(26px, 2.65vw, 40px);
+  font-size: clamp(20px, 1.99vw, 30px);
   line-height: 1.2;
   letter-spacing: .05em;
   white-space: nowrap;
@@ -85,15 +85,15 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: clamp(28px, 3.31vw, 50px);
+  gap: clamp(21px, 2.48vw, 38px);
   margin-top: auto;
 }
 
-.tags { display: flex; gap: 24px; }
+.tags { display: flex; gap: 20px; }
 
 .tag {
   color: var(--soft);
-  font-size: clamp(14px, 1.59vw, 24px);
+  font-size: clamp(12px, 1.19vw, 18px);
   line-height: 1.2;
   letter-spacing: .1em;
   white-space: nowrap;
@@ -102,12 +102,12 @@ h1 {
 .button {
   display: grid;
   place-items: center;
-  width: clamp(220px, 20.7vw, 313px);
-  height: clamp(48px, 4.63vw, 70px);
+  width: clamp(165px, 15.53vw, 235px);
+  height: clamp(38px, 3.47vw, 53px);
   color: var(--surface);
   background: var(--soft);
   border-radius: 999px;
-  font-size: clamp(14px, 1.59vw, 24px);
+  font-size: clamp(12px, 1.19vw, 18px);
   letter-spacing: .1em;
   text-decoration: none;
   transition: .16s ease;
@@ -125,18 +125,18 @@ h1 {
 #music-video { position: absolute; top: -20px; }
 
 @media (max-width: 1100px) {
-  .card { grid-template-columns: minmax(220px, 320px) 1fr; }
-  .tags { flex-direction: column; gap: 14px; }
+  .card { grid-template-columns: minmax(180px, 260px) 1fr; }
+  .tags { flex-direction: column; gap: 12px; }
 }
 
 @media (max-width: 760px) {
-  .page { padding: 100px 50px 120px; }
-  .filters { flex-wrap: wrap; gap: 14px 22px; }
-  .card { display: block; padding: 32px; }
-  .thumb { width: min(100%, 400px); margin: auto; }
-  .content { margin-top: 34px; }
+  .page { padding: 90px 50px 100px; }
+  .filters { flex-wrap: wrap; gap: 12px 18px; }
+  .card { display: block; padding: 26px; }
+  .thumb { width: min(100%, 300px); margin: auto; }
+  .content { margin-top: 28px; }
   .content h2 { overflow-wrap: anywhere; white-space: normal; }
-  .action { margin-top: 48px; }
+  .action { margin-top: 40px; }
   .tags { flex-flow: row wrap; }
-  .button { width: min(100%, 280px); height: 54px; font-size: 16px; }
+  .button { width: min(100%, 220px); height: 46px; font-size: 14px; }
 }
