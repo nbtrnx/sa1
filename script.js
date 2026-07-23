@@ -30,13 +30,13 @@ document.querySelectorAll('[data-carousel]').forEach((row) => {
   setActive();
 });
 
-// Member modal: tap a member card to see photo + name + group/role.
-// Fill in real info by adding data-group="..." data-role="..." to a card button.
+// Member modal: tap a member card to see photo + name + team/role.
+// Fill in real info by adding data-team="..." data-role="..." to a card button.
 const modal = document.getElementById('member-modal');
 if (modal) {
   const photoEl = modal.querySelector('.member-modal__photo');
   const nameEl = modal.querySelector('.member-modal__name');
-  const groupEl = modal.querySelector('[data-field="group"]');
+  const teamEl = modal.querySelector('[data-field="team"]');
   const roleEl = modal.querySelector('[data-field="role"]');
   let lastFocused = null;
 
@@ -51,7 +51,7 @@ if (modal) {
       photoEl.alt = '';
     }
     nameEl.textContent = name;
-    groupEl.textContent = card.dataset.group || 'XXXXXXXXXX';
+    teamEl.textContent = card.dataset.team || 'XXXXXXXXXX';
     roleEl.textContent = card.dataset.role || 'XXXXXXXXXXXXXXXXXXXX';
     lastFocused = card;
     modal.hidden = false;
