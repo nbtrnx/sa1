@@ -1,91 +1,114 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Blog</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div class="main-wrapper">
-      <div class="page-heading">
-        <h1>Blog</h1>
-        <a class="works-link" href="works/">Works →</a>
-      </div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="ENG SA G1 — class portfolio: works, members and blog">
+  <title>ENG SA G1 — Home</title>
+  <link rel="stylesheet" href="shared.css?v=6">
+  <link rel="stylesheet" href="style.css?v=6">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-current="page">ENG SA G1</a>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="works.html">WORK</a>
+      <a href="blog.html">BLOG</a>
+    </nav>
+  </header>
 
-      <div class="content-area">
-        <div class="timeline-container">
-          <div class="vertical-line"></div>
+  <main>
+    <section class="hero" aria-label="Hero">
+      <h1>Hero</h1>
+    </section>
 
-          <div class="comment-item parent">
-            <div class="user-info">
-              <img src="icon.jpg" alt="icon" class="avatar" />
-              <div class="username">name</div>
-            </div>
-            <div class="comment-content-body">
-              <div class="text-and-time">
-                <p class="comment-text">This is a dummy sentence. Here would be blog comments.</p>
-                <time datetime="2026-06-15T14:19">6/15/26, 14:19</time>
-              </div>
-              <div class="actions">
-                <img src="like.jpg" alt="like" class="action-icon" />
-                <img src="comment.jpg" alt="comment" class="action-icon" />
-              </div>
-            </div>
-          </div>
-
-          <div class="comment-item reply">
-            <div class="user-info">
-              <img src="icon.jpg" alt="icon" class="avatar" />
-              <div class="username">name</div>
-            </div>
-            <div class="comment-content-body">
-              <div class="text-and-time">
-                <p class="comment-text">This is a dummy sentence. Here would be blog comments.</p>
-                <time datetime="2026-06-15T14:19">6/15/26, 14:19</time>
-              </div>
-              <div class="actions">
-                <img src="like.jpg" alt="like" class="action-icon" />
-              </div>
-            </div>
-          </div>
-
-          <div class="comment-item reply">
-            <div class="user-info">
-              <img src="icon.jpg" alt="icon" class="avatar" />
-              <div class="username">name</div>
-            </div>
-            <div class="comment-content-body">
-              <div class="text-and-time">
-                <p class="comment-text">This is a dummy sentence. Here would be blog comments.</p>
-                <time datetime="2026-06-15T14:19">6/15/26, 14:19</time>
-              </div>
-              <div class="actions">
-                <img src="like.jpg" alt="like" class="action-icon" />
-              </div>
-            </div>
-          </div>
+    <section class="section works-section" aria-labelledby="works-title">
+      <div class="container">
+        <div class="section-heading">
+          <h2 id="works-title">Works</h2><span class="arrow" aria-hidden="true"></span>
         </div>
-
-        <div class="timeline-container">
-          <div class="comment-item parent">
-            <div class="user-info">
-              <img src="icon.jpg" alt="icon" class="avatar" />
-              <div class="username">name</div>
-            </div>
-            <div class="comment-content-body">
-              <div class="text-and-time">
-                <p class="comment-text">This is a dummy sentence. Here would be blog comments.</p>
-                <time datetime="2026-06-15T14:19">6/15/26, 14:19</time>
-              </div>
-              <div class="actions">
-                <img src="like.jpg" alt="like" class="action-icon" />
-                <img src="comment.jpg" alt="comment" class="action-icon" />
-              </div>
-            </div>
-          </div>
+        <div class="card-row">
+          <article class="card card--work">
+            <div class="thumb" role="img" aria-label="Featured work thumbnail"></div>
+            <h3 class="work-title">Title</h3>
+            <a class="pill" href="works.html"><span class="sr-only">See more works</span></a>
+          </article>
+          <article class="card"><span class="sr-only">Work 2</span></article>
+          <article class="card"><span class="sr-only">Work 3</span></article>
         </div>
+        <svg class="dots dots--works" viewBox="0 0 128 20" aria-hidden="true">
+          <circle cx="10" cy="10" r="10" fill="#FF7A7A"/>
+          <circle cx="64" cy="10" r="10" fill="#FFC4C4"/>
+          <circle cx="118" cy="10" r="10" fill="#FFC4C4"/>
+        </svg>
       </div>
-    </div>
-  </body>
+    </section>
+
+    <section class="section members-section" aria-labelledby="members-title">
+      <div class="container">
+        <div class="section-heading">
+          <h2 id="members-title">Members</h2><span class="arrow" aria-hidden="true"></span>
+        </div>
+        <div class="card-row">
+          <article class="card"><span class="sr-only">Member 1</span></article>
+          <article class="card"><span class="sr-only">Member 2</span></article>
+          <article class="card"><span class="sr-only">Member 3</span></article>
+        </div>
+        <svg class="dots dots--wide" viewBox="0 0 820 20" aria-hidden="true">
+          <circle cx="10" cy="10" r="10" fill="#FF7A7A"/>
+          <circle cx="60" cy="10" r="10" fill="#FFC4C4"/>
+          <circle cx="110" cy="10" r="10" fill="#FFC4C4"/>
+          <circle cx="160" cy="10" r="10" fill="#FFC4C4"/>
+          <circle cx="210" cy="10" r="10" fill="#FFC4C4"/>
+          <circle cx="260" cy="10" r="10" fill="#FFC4C4"/>
+          <circle cx="310" cy="10" r="10" fill="#FFC4C4"/>
+          <circle cx="360" cy="10" r="10" fill="#FFC4C4"/>
+          <circle cx="410" cy="10" r="10" fill="#FFC4C4"/>
+          <circle cx="460" cy="10" r="10" fill="#FFC4C4"/>
+          <circle cx="510" cy="10" r="10" fill="#FFC4C4"/>
+          <circle cx="560" cy="10" r="10" fill="#FFC4C4"/>
+          <circle cx="610" cy="10" r="10" fill="#FFC4C4"/>
+          <circle cx="660" cy="10" r="10" fill="#FFC4C4"/>
+          <circle cx="710" cy="10" r="10" fill="#FFC4C4"/>
+          <circle cx="760" cy="10" r="10" fill="#FFC4C4"/>
+          <circle cx="810" cy="10" r="10" fill="#FFC4C4"/>
+        </svg>
+      </div>
+    </section>
+
+    <section class="section blog-section" aria-labelledby="blog-title">
+      <div class="container">
+        <div class="section-heading">
+          <h2 id="blog-title">Blog</h2><span class="arrow" aria-hidden="true"></span>
+        </div>
+        <div class="card-row">
+          <a class="card" href="blog.html"><span class="sr-only">Blog post 1</span></a>
+          <a class="card" href="blog.html"><span class="sr-only">Blog post 2</span></a>
+          <a class="card" href="blog.html"><span class="sr-only">Blog post 3</span></a>
+        </div>
+        <svg class="dots dots--wide" viewBox="0 0 820 20" aria-hidden="true">
+          <circle cx="10" cy="10" r="10" fill="#FF7A7A"/>
+          <circle cx="60" cy="10" r="10" fill="#FFC4C4"/>
+          <circle cx="110" cy="10" r="10" fill="#FFC4C4"/>
+          <circle cx="160" cy="10" r="10" fill="#FFC4C4"/>
+          <circle cx="210" cy="10" r="10" fill="#FFC4C4"/>
+          <circle cx="260" cy="10" r="10" fill="#FFC4C4"/>
+          <circle cx="310" cy="10" r="10" fill="#FFC4C4"/>
+          <circle cx="360" cy="10" r="10" fill="#FFC4C4"/>
+          <circle cx="410" cy="10" r="10" fill="#FFC4C4"/>
+          <circle cx="460" cy="10" r="10" fill="#FFC4C4"/>
+          <circle cx="510" cy="10" r="10" fill="#FFC4C4"/>
+          <circle cx="560" cy="10" r="10" fill="#FFC4C4"/>
+          <circle cx="610" cy="10" r="10" fill="#FFC4C4"/>
+          <circle cx="660" cy="10" r="10" fill="#FFC4C4"/>
+          <circle cx="710" cy="10" r="10" fill="#FFC4C4"/>
+          <circle cx="760" cy="10" r="10" fill="#FFC4C4"/>
+          <circle cx="810" cy="10" r="10" fill="#FFC4C4"/>
+        </svg>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"></footer>
+</body>
 </html>

@@ -1,0 +1,76 @@
+/* Shared header bar — Figma node 246:2 (ENG SA G1 / WORK / BLOG) */
+
+:root {
+  --header-h: clamp(64px, 6.61vw, 100px);
+}
+
+.site-header {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--header-h);
+  padding-inline: max(20px, calc((100% - 1160px) / 2));
+  background: #fff3f3;
+}
+
+.site-header a {
+  color: #ff7a7a;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", "Helvetica Neue", Arial, sans-serif;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.brand {
+  font-size: clamp(20px, 2.12vw, 32px);
+  line-height: 1;
+  letter-spacing: .02em;
+  white-space: nowrap;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(28px, 9.26vw, 140px);
+}
+
+.site-nav a {
+  position: relative;
+  padding: 8px 0;
+  font-size: clamp(13px, 1.32vw, 20px);
+  line-height: 1;
+  letter-spacing: .04em;
+}
+
+.site-nav a::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 160ms ease;
+}
+
+.site-nav a:hover::after,
+.site-nav a[aria-current="page"]::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.brand:focus-visible,
+.site-nav a:focus-visible {
+  outline: 3px solid #ff7a7a;
+  outline-offset: 3px;
+}
+
+@media (max-width: 520px) {
+  .site-nav { gap: 22px; }
+}
