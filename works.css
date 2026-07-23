@@ -19,7 +19,7 @@ a { color: inherit; }
 .page {
   width: min(100%, 853px);
   margin: auto;
-  padding: 90px 100px 135px;
+  padding: 130px 100px 135px;
 }
 
 header { position: relative; text-align: center; }
@@ -130,7 +130,7 @@ h1 {
 }
 
 @media (max-width: 760px) {
-  .page { padding: 90px 50px 100px; }
+  .page { padding: 110px 50px 100px; }
   .filters { flex-wrap: wrap; gap: 12px 18px; }
   .card { display: block; padding: 26px; }
   .thumb { width: min(100%, 225px); margin: auto; }
