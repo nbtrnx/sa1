@@ -18,7 +18,7 @@ a { color: inherit; }
 /* Side padding per Design Rules page: 100px desktop / 50px mobile.
    Content scaled to 75% of the Figma frame sizes. */
 .container {
-  width: min(870px, 100% - 200px);
+  width: min(653px, 100% - 200px);
   margin-inline: auto;
 }
 
@@ -35,7 +35,7 @@ a { color: inherit; }
 
 .hero h1 {
   margin: 0;
-  font-size: clamp(40px, 4.76vw, 72px);
+  font-size: clamp(32px, 3.57vw, 54px);
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: .05em;
@@ -45,12 +45,12 @@ a { color: inherit; }
 .section-heading {
   display: flex;
   align-items: center;
-  gap: clamp(30px, 7.43vw, 112px);
+  gap: clamp(24px, 5.57vw, 84px);
 }
 
 .section-heading h2 {
   margin: 0;
-  font-size: clamp(36px, 4.76vw, 72px);
+  font-size: clamp(28px, 3.57vw, 54px);
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: .05em;
@@ -58,28 +58,28 @@ a { color: inherit; }
 
 .arrow {
   flex: none;
-  width: clamp(22px, 2.72vw, 41px);
+  width: clamp(17px, 2.04vw, 31px);
   aspect-ratio: 55 / 50;
   background: var(--soft);
   clip-path: polygon(0 0, 100% 50%, 0 100%);
 }
 
-.works-section { padding-top: clamp(56px, 7.1vw, 107px); }
-.members-section, .blog-section { padding-top: clamp(84px, 12.75vw, 195px); }
+.works-section { padding-top: clamp(42px, 5.33vw, 80px); }
+.members-section, .blog-section { padding-top: clamp(63px, 9.56vw, 146px); }
 
 /* Card rows: 3 cards of 399x528 with ~70px gaps at full size */
 .card-row {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: clamp(16px, 3.47vw, 53px);
-  margin-top: clamp(28px, 3.97vw, 60px);
+  gap: clamp(12px, 2.6vw, 40px);
+  margin-top: clamp(21px, 2.98vw, 45px);
 }
 
 .card {
   display: block;
   aspect-ratio: 399 / 528;
   background: var(--surface);
-  border-radius: clamp(16px, 1.99vw, 30px);
+  border-radius: clamp(12px, 1.49vw, 23px);
 }
 
 a.card {
@@ -134,18 +134,18 @@ a.card:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
 }
 
 .dots--works {
-  width: clamp(56px, 6.35vw, 96px);
-  margin-top: clamp(44px, 5.95vw, 90px);
+  width: clamp(42px, 4.76vw, 72px);
+  margin-top: clamp(33px, 4.46vw, 68px);
 }
 
 .dots--wide {
-  width: min(615px, 82%);
-  margin-top: clamp(33px, 4.27vw, 65px);
+  width: min(461px, 82%);
+  margin-top: clamp(25px, 3.2vw, 49px);
 }
 
 .site-footer {
-  height: clamp(180px, 34.65vw, 525px);
-  margin-top: clamp(84px, 14.85vw, 225px);
+  height: clamp(135px, 26vw, 394px);
+  margin-top: clamp(63px, 11.14vw, 169px);
   background: var(--soft);
 }
 
@@ -167,7 +167,7 @@ a.card:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
   .container { width: calc(100% - 100px); }
 
   .card-row {
-    grid-template-columns: repeat(3, min(72%, 240px));
+    grid-template-columns: repeat(3, min(72%, 180px));
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     padding-bottom: 10px;
