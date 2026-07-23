@@ -14,20 +14,24 @@
 </header>
 <main class="page">
   <header><h1>Works</h1><nav class="filters" aria-label="Work categories">
-    <a href="#short-film">#Short Film</a><a href="#music-video">#Music Video</a>
+    <a href="#short-film">#Short Film</a>
     <a href="#advertisement">#Advertisement</a><a href="#game">#Game</a>
   </nav></header>
   <section class="works" aria-label="Works">
-    <article class="card" id="advertisement">
-      <div class="thumb" role="img" aria-label="Advertisement work thumbnail"></div>
-      <div class="content"><h2>Title aaaaaaaaaaaaaa</h2><div class="action">
-        <a class="tag" href="#advertisement">#Advertisement</a><a class="button" href="#">&gt; SEE MORE</a>
+    <article class="card card--landscape" id="advertisement">
+      <img class="thumb thumb--contain" src="img/works/advertisement/page-1.jpg"
+           alt="Welcome to the SA Class — advertisement page 1">
+      <div class="content"><h2>Welcome to the SA Class</h2>
+      <p class="card-members">Maiko / Soomin / Amane</p>
+      <div class="action">
+        <a class="tag" href="#advertisement">#Advertisement</a>
+        <button class="button" type="button" data-open-modal="work-modal-ad">&gt; SEE MORE</button>
       </div></div>
     </article>
     <article class="card" id="short-film">
-      <span id="music-video"></span><div class="thumb" role="img" aria-label="Film work thumbnail"></div>
+      <div class="thumb" role="img" aria-label="Film work thumbnail"></div>
       <div class="content"><h2>Title aaaaaaaaaaaaaa</h2><div class="action">
-        <div class="tags"><a class="tag" href="#short-film">#Short Film</a><a class="tag" href="#music-video">#Music Video</a></div>
+        <a class="tag" href="#short-film">#Short Film</a>
         <a class="button" href="#">&gt; SEE MORE</a>
       </div></div>
     </article>
@@ -43,5 +47,27 @@
   <img class="footer-logo" src="img/sa_logo.svg" alt="ENG SA G1 logo">
   <small>&copy; 2026 ENG SA G1. All rights reserved.</small>
 </footer>
+<div class="work-modal" id="work-modal-ad" hidden>
+  <div class="work-modal__backdrop" data-modal-close></div>
+  <div class="work-modal__panel" role="dialog" aria-modal="true" aria-labelledby="work-modal-ad-title">
+    <button class="work-modal__close" type="button" data-modal-close aria-label="Close">&#215;</button>
+    <h2 class="work-modal__title" id="work-modal-ad-title">Welcome to the SA Class</h2>
+    <p class="work-modal__members">Maiko / Soomin / Amane</p>
+    <p class="work-modal__desc">A collage-style advertisement introducing the ENG SA G1 class,
+      featuring photos of all the members.</p>
+    <div class="work-modal__viewer">
+      <button class="work-modal__nav work-modal__nav--prev" type="button" aria-label="Previous page">&#8249;</button>
+      <div class="work-modal__stage">
+        <img src="img/works/advertisement/page-1.jpg" alt="Welcome to the SA Class — page 1" class="is-current">
+        <img src="img/works/advertisement/page-2.jpg" alt="Welcome to the SA Class — page 2">
+        <img src="img/works/advertisement/page-3.jpg" alt="Welcome to the SA Class — page 3">
+        <img src="img/works/advertisement/page-4.jpg" alt="Welcome to the SA Class — page 4">
+      </div>
+      <button class="work-modal__nav work-modal__nav--next" type="button" aria-label="Next page">&#8250;</button>
+    </div>
+    <p class="work-modal__counter">1 / 4</p>
+  </div>
+</div>
+<script src="script.js" defer></script>
 </body>
 </html>
