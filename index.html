@@ -53,85 +53,85 @@
         <div class="section-heading">
           <h2 id="members-title">Members</h2><span class="arrow" aria-hidden="true"></span>
         </div>
-        <!-- 顔写真を入れるとき: <div class="member-photo"> を
-             <img class="member-photo" src="img/members/xxx.jpg" alt="名前"> に差し替え -->
+        <!-- 顔写真: <img class="member-photo" src="img/members/xxx.jpg" alt="名前">
+             モーダルのgroup/roleは data-group="..." data-role="..." をカードのbuttonに追加すると表示される -->
         <div class="card-row" data-carousel="members">
-          <article class="card card--member">
+          <button type="button" class="card card--member">
             <img class="member-photo" src="img/members/ginga.jpg" alt="Ginga">
             <p class="member-name">Ginga</p>
-          </article>
-          <article class="card card--member">
+          </button>
+          <button type="button" class="card card--member">
             <img class="member-photo" src="img/members/maiko.jpg" alt="Maiko">
             <p class="member-name">Maiko</p>
-          </article>
-          <article class="card card--member">
+          </button>
+          <button type="button" class="card card--member">
             <img class="member-photo" src="img/members/maki.jpg" alt="Maki">
             <p class="member-name">Maki</p>
-          </article>
-          <article class="card card--member">
+          </button>
+          <button type="button" class="card card--member">
             <img class="member-photo" src="img/members/masayan.jpg" alt="Masayan">
             <p class="member-name">Masayan</p>
-          </article>
-          <article class="card card--member">
+          </button>
+          <button type="button" class="card card--member">
             <img class="member-photo" src="img/members/misaki.jpg" alt="Misaki">
             <p class="member-name">Misaki</p>
-          </article>
-          <article class="card card--member">
+          </button>
+          <button type="button" class="card card--member">
             <img class="member-photo" src="img/members/mizuto.jpg" alt="Mizuto">
             <p class="member-name">Mizuto</p>
-          </article>
-          <article class="card card--member">
+          </button>
+          <button type="button" class="card card--member">
             <img class="member-photo" src="img/members/momoka.jpg" alt="Momoka">
             <p class="member-name">Momoka</p>
-          </article>
-          <article class="card card--member">
+          </button>
+          <button type="button" class="card card--member">
             <img class="member-photo" src="img/members/nagai.jpg" alt="Nagai">
             <p class="member-name">Nagai</p>
-          </article>
-          <article class="card card--member">
+          </button>
+          <button type="button" class="card card--member">
             <img class="member-photo" src="img/members/nobuteru.jpg" alt="Nobuteru">
             <p class="member-name">Nobuteru</p>
-          </article>
-          <article class="card card--member">
+          </button>
+          <button type="button" class="card card--member">
             <img class="member-photo" src="img/members/shu.jpg" alt="Shu">
             <p class="member-name">Shu</p>
-          </article>
-          <article class="card card--member">
+          </button>
+          <button type="button" class="card card--member">
             <img class="member-photo" src="img/members/soomin.jpg" alt="Soomin">
             <p class="member-name">Soomin</p>
-          </article>
-          <article class="card card--member">
+          </button>
+          <button type="button" class="card card--member">
             <img class="member-photo" src="img/members/youmi.jpg" alt="Youmi">
             <p class="member-name">Youmi</p>
-          </article>
-          <article class="card card--member">
+          </button>
+          <button type="button" class="card card--member">
             <div class="member-photo" role="img" aria-label="Member photo"></div>
             <p class="member-name">Name</p>
-          </article>
-          <article class="card card--member">
+          </button>
+          <button type="button" class="card card--member">
             <div class="member-photo" role="img" aria-label="Member photo"></div>
             <p class="member-name">Name</p>
-          </article>
-          <article class="card card--member">
+          </button>
+          <button type="button" class="card card--member">
             <div class="member-photo" role="img" aria-label="Member photo"></div>
             <p class="member-name">Name</p>
-          </article>
-          <article class="card card--member">
+          </button>
+          <button type="button" class="card card--member">
             <div class="member-photo" role="img" aria-label="Member photo"></div>
             <p class="member-name">Name</p>
-          </article>
-          <article class="card card--member">
+          </button>
+          <button type="button" class="card card--member">
             <div class="member-photo" role="img" aria-label="Member photo"></div>
             <p class="member-name">Name</p>
-          </article>
-          <article class="card card--member">
+          </button>
+          <button type="button" class="card card--member">
             <div class="member-photo" role="img" aria-label="Member photo"></div>
             <p class="member-name">Name</p>
-          </article>
-          <article class="card card--member">
+          </button>
+          <button type="button" class="card card--member">
             <div class="member-photo" role="img" aria-label="Member photo"></div>
             <p class="member-name">Name</p>
-          </article>
+          </button>
         </div>
         <nav class="dots dots--wide" data-dots="members" aria-label="Members carousel"></nav>
       </div>
@@ -156,6 +156,19 @@
   </main>
 
   <footer class="site-footer"></footer>
+  <div class="member-modal" id="member-modal" hidden>
+    <div class="member-modal__backdrop" data-modal-close></div>
+    <div class="member-modal__panel" role="dialog" aria-modal="true" aria-labelledby="member-modal-name">
+      <button class="member-modal__close" type="button" data-modal-close aria-label="Close">&#215;</button>
+      <img class="member-modal__photo" src="" alt="">
+      <p class="member-modal__name" id="member-modal-name">Name</p>
+      <dl class="member-modal__info">
+        <div><dt>group</dt><dd data-field="group">XXXXXXXXXX</dd></div>
+        <div><dt>role</dt><dd data-field="role">XXXXXXXXXXXXXXXXXXXX</dd></div>
+      </dl>
+    </div>
+  </div>
+
   <script src="script.js" defer></script>
 </body>
 </html>
