@@ -51,6 +51,8 @@ if (modal) {
       photoEl.src = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
       photoEl.alt = '';
     }
+    // per-member crop position, e.g. data-photo-pos="center 70%"
+    photoEl.style.objectPosition = card.dataset.photoPos || 'center';
     nameEl.textContent = name;
     // data attribute absent -> placeholder; set but empty (data-team="") -> row hidden
     teamEl.parentElement.hidden = card.dataset.team === '';
