@@ -24,13 +24,33 @@ a { color: inherit; }
 
 /* Hero fills the first screen; the fixed header overlays its top, as in Figma */
 .hero {
+  position: relative;
   display: grid;
   place-items: center;
   height: 100vh;
   height: 100svh;
   min-height: 480px;
+  overflow: hidden;
   color: #000;
   background: #fff;
+}
+
+/* Temporary class photo as background, softened so the logo stays readable */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: contrast(.7) brightness(1.12);
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: rgb(255 255 255 / 35%);
 }
 
 .hero h1 {
@@ -42,11 +62,14 @@ a { color: inherit; }
 }
 
 .hero-logo {
+  position: relative;
+  z-index: 2;
   display: block;
-  width: min(70%, 700px);
-  max-height: 62vh;
+  width: min(64%, 640px);
+  max-height: 58vh;
   height: auto;
   object-fit: contain;
+  filter: drop-shadow(0 0 14px rgb(255 255 255 / 85%)) drop-shadow(0 0 4px rgb(255 255 255 / 90%));
 }
 
 /* Section headings: big pink title + triangle */
