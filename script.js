@@ -47,7 +47,8 @@ if (modal) {
       photoEl.src = img.src;
       photoEl.alt = name;
     } else {
-      photoEl.removeAttribute('src');
+      // transparent pixel keeps the gray placeholder box, no broken-image icon
+      photoEl.src = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
       photoEl.alt = '';
     }
     nameEl.textContent = name;
