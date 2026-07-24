@@ -32,16 +32,31 @@ document.querySelectorAll('[data-carousel]').forEach((row) => {
 
 // Member modal: tap a member card to see photo + name + team/role.
 // Fill in real info by adding data-team="..." data-role="..." to a card button.
+// Apply per-member crop settings: data-photo-pos (position), data-photo-zoom (scale)
+const applyPhotoCrop = (img, card) => {
+  const pos = card.dataset.photoPos || 'center';
+  const zoom = parseFloat(card.dataset.photoZoom || '1');
+  img.style.objectPosition = pos;
+  img.style.transformOrigin = pos;
+  img.style.transform = zoom !== 1 ? `scale(${zoom})` : '';
+};
+
+document.querySelectorAll('.card--member').forEach((card) => {
+  const img = card.querySelector('.member-photo img');
+  if (img) applyPhotoCrop(img, card);
+});
+
 const modal = document.getElementById('member-modal');
 if (modal) {
-  const photoEl = modal.querySelector('.member-modal__photo');
+  const photoEl = modal.querySelector('.member-modal__photo img');
   const nameEl = modal.querySelector('.member-modal__name');
   const teamEl = modal.querySelector('[data-field="team"]');
   const roleEl = modal.querySelector('[data-field="role"]');
+  const majorEl = modal.querySelector('[data-field="major"]');
   let lastFocused = null;
 
   const openModal = (card) => {
-    const img = card.querySelector('img.member-photo');
+    const img = card.querySelector('.member-photo img');
     const name = (card.querySelector('.member-name')?.textContent || 'Name').trim();
     if (img) {
       photoEl.src = img.src;
@@ -51,14 +66,15 @@ if (modal) {
       photoEl.src = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
       photoEl.alt = '';
     }
-    // per-member crop position, e.g. data-photo-pos="center 70%"
-    photoEl.style.objectPosition = card.dataset.photoPos || 'center';
+    applyPhotoCrop(photoEl, card);
     nameEl.textContent = name;
     // data attribute absent -> placeholder; set but empty (data-team="") -> row hidden
     teamEl.parentElement.hidden = card.dataset.team === '';
     roleEl.parentElement.hidden = card.dataset.role === '';
+    majorEl.parentElement.hidden = card.dataset.major === '';
     teamEl.textContent = card.dataset.team || 'XXXXXXXXXX';
     roleEl.textContent = card.dataset.role || 'XXXXXXXXXXXXXXXXXXXX';
+    majorEl.textContent = card.dataset.major || 'XXXXXXXXXX';
     lastFocused = card;
     modal.hidden = false;
     document.body.classList.add('modal-open');
