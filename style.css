@@ -24,13 +24,33 @@ a { color: inherit; }
 
 /* Hero fills the first screen; the fixed header overlays its top, as in Figma */
 .hero {
+  position: relative;
   display: grid;
   place-items: center;
   height: 100vh;
   height: 100svh;
   min-height: 480px;
+  overflow: hidden;
   color: #000;
   background: #fff;
+}
+
+/* Temporary class photo as background, softened so the logo stays readable */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: contrast(.7) brightness(1.12);
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: rgb(255 255 255 / 35%);
 }
 
 .hero h1 {
@@ -42,11 +62,14 @@ a { color: inherit; }
 }
 
 .hero-logo {
+  position: relative;
+  z-index: 2;
   display: block;
-  width: min(70%, 700px);
-  max-height: 62vh;
+  width: min(64%, 640px);
+  max-height: 58vh;
   height: auto;
   object-fit: contain;
+  filter: drop-shadow(0 0 14px rgb(255 255 255 / 85%)) drop-shadow(0 0 4px rgb(255 255 255 / 90%));
 }
 
 /* Section headings: big pink title + triangle */
@@ -197,10 +220,10 @@ a.card:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
 
 .member-modal__panel {
   position: relative;
-  width: min(90vw, 400px);
-  max-height: 88svh;
+  width: min(92vw, 620px);
+  max-height: 90svh;
   overflow-y: auto;
-  padding: 26px 26px 30px;
+  padding: 30px 30px 36px;
   background: #fff;
   border-radius: 24px;
   text-align: center;
@@ -233,9 +256,9 @@ a.card:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
 }
 
 .member-modal__name {
-  margin: 18px 0 8px;
+  margin: 22px 0 10px;
   color: var(--accent);
-  font-size: 26px;
+  font-size: 32px;
   font-weight: 700;
   letter-spacing: .04em;
 }
@@ -243,7 +266,7 @@ a.card:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
 .member-modal__info {
   margin: 0;
   color: #333;
-  font-size: 15px;
+  font-size: 17px;
   line-height: 1.8;
 }
 
